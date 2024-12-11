@@ -29,15 +29,19 @@ void *ft_memset(void *ptr, int c, size_t n)
 ** Test
 
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
 	unsigned int i;
 
 	i = 0;
-	char buffer[] = "FFFF";
-	ft_memset(buffer, 'A', (sizeof(buffer) - 1));
-	printf("%s\n", buffer);
+	char buffer[] = "Hello";
+	memset(buffer, 'A', 5);
+	printf("memset value: %s\n", buffer);
+	ft_memset(buffer, 'A', 5);
+	printf("ft_memset value: %s\n", buffer);
+
 	return (0);
 }
 */
