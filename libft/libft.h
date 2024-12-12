@@ -17,5 +17,5 @@
 #include <stdio.h>
 
 size_t ft_strlen(char *str);
-
+void *ft_memcpy(void *dest, const void *src, size_t n);
 #endif
