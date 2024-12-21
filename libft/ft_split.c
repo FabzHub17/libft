@@ -37,7 +37,7 @@ static char *copy_word(const char *start, size_t len)
 {
     char *word;
 
-    word = (char *)malloc((len + 1) * sizeof(char));
+    word = malloc((len + 1) * sizeof(char));
     if (!word)
         return (NULL);
     ft_strlcpy(word, start, len + 1);
@@ -86,7 +86,7 @@ char **ft_split(char const *s, char c)
 
     if(!s)
         return (NULL);
-    split_array = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+    split_array = malloc((count_words(s, c) + 1) * sizeof(char *));
     if (!split_array)
         return (NULL);
     allocate_word(split_array,s,c);
