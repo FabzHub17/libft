@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tvithara <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/21 11:56:25 by tvithara          #+#    #+#             */
+/*   Updated: 2024/12/21 11:56:27 by tvithara         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static size_t count_words(const char *s, char c)
@@ -32,6 +44,39 @@ static char *copy_word(const char *start, size_t len)
     return (word);
 }
 
+static void allocate_word(char **split_arr, char const *str, char sep)
+{
+    size_t i;
+    size_t len;
+    const char *start;
+
+    i = 0;
+    while (*str)
+    {
+        len = 0;
+        if (*str != sep)
+        {
+            start = str;
+            while (*str && *str != sep)
+            {
+                len++;
+                str++;
+            }
+            split_arr[i] = copy_word(start, len);
+            /*if (!split_arr[i])
+            {
+                // free_all(split_array, i);
+                return NULL;
+            }
+            */
+            i++;
+        }
+        else
+            str++;
+    }
+    split_arr[i] = NULL;
+}
+
 char **ft_split(char const *s, char c)
 {
     size_t i;
@@ -39,65 +84,29 @@ char **ft_split(char const *s, char c)
     const char *start;
     char **split_array;
 
+    if(!s)
+        return (NULL);
     split_array = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
     if (!split_array)
         return (NULL);
-    i = 0;
-    len = 0;
-    while (*s)
-    {
-        if (*s != c)
-        {
-            start = s;
-            while (*s && *s != c)
-            {
-                len++;
-                s++;
-            }
-            split_array[i] = copy_word(start, len);
-            if (!split_array[i])
-            {
-                // free_all(split_array, i);
-                return NULL;
-            }
-            i++;
-        }
-        else
-            s++;
-    }
-    split_array[i] = NULL;
+    allocate_word(split_array,s,c);
     return (split_array);
 }
 
-void print_split_result(char **result)
-{
-    if (!result)
-    {
-        printf("Errore: risultato NULL.\n");
-        return;
-    }
-
-    int i = 0;
-    while (result[i])
-    {
-        printf("Parola %d: '%s'\n", i + 1, result[i]);
-        i++;
-    }
-    printf("Totale parole: %d\n", i);
-
-    // Libera la memoria allocata
-    i = 0;
-    while (result[i])
-    {
-        free(result[i]);
-        i++;
-    }
-    free(result);
-}
+/*
 int main(void)
 {
     char *str = "Hello, World! How are you today?";
+    char *str1 = "Hello, World!";
     char **split_str = ft_split(str, ' ');
-    print_split_result(split_str);
+    int	i;
+    
+    i = 0;
+	while (split_str[i] != 0)
+	{
+		printf("word: %s\n", split_str[i]);
+		i++;
+	}
     return (0);
 }
+*/
