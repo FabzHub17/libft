@@ -6,11 +6,12 @@
 /*   By: tvithara <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 11:33:20 by tvithara          #+#    #+#             */
-/*   Updated: 2024/12/21 11:33:24 by tvithara         ###   ########.fr       */
+/*   Updated: 2024/12/22 17:25:22 by tvithara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	ft_bzero(void *ptr, size_t n)
 {
 	unsigned char	*s;

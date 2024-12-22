@@ -6,7 +6,7 @@
 /*   By: tvithara <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 12:46:13 by tvithara          #+#    #+#             */
-/*   Updated: 2024/12/21 12:46:15 by tvithara         ###   ########.fr       */
+/*   Updated: 2024/12/22 17:23:36 by tvithara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static int	ft_numlen(int n)
 	}
 	return (len);
 }
+
 static void	check_max(int *nbr, char *s)
 {
 	if (*nbr == -2147483648)

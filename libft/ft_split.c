@@ -6,7 +6,7 @@
 /*   By: tvithara <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 11:56:25 by tvithara          #+#    #+#             */
-/*   Updated: 2024/12/21 11:56:27 by tvithara         ###   ########.fr       */
+/*   Updated: 2024/12/22 17:52:23 by tvithara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,6 @@ static void	allocate_word(char **split_arr, char const *str, char sep)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t		i;
-	size_t		len;
-	const char	*start;
 	char		**split_array;
 
 	if (!s)
