@@ -29,6 +29,15 @@ static int ft_numlen(int n)
     }
     return (len);
 }
+static void check_max(int *nbr, char *s)
+{
+    if (*nbr == -2147483648)
+	{
+		s[0] = '-';
+		s[1] = '2';
+		*nbr = 147483648;
+	}
+}
 
 char *ft_itoa(int n)
 {
@@ -41,12 +50,7 @@ char *ft_itoa(int n)
         return (NULL);
     str[len] = '\0';
     len--;
-    if (n == -2147483648)
-	{
-		str[0] = '-';
-		str[1] = '2';
-		n = 147483648;
-	}
+    check_max(&n,str);
     if(n < 0)
     {
         str[0] = '-';
@@ -60,18 +64,17 @@ char *ft_itoa(int n)
     }
     return str;
 }
-/*
-int main(void)
+
+/* int main(void)
 {
     int num;
     int num1;
     char *result;
 
-    num = 123;
+    num = -123;
     num1 = -2147483648;
-    result = ft_itoa(num1);
+    result = ft_itoa(num);
     printf("result: %s\n", result);
     free(result);
     return (0);
-}
-*/
+}  */

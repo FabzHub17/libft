@@ -16,14 +16,14 @@ char *ft_strchr(const char *s, int c)
 {
     char *ptr;
 
-    ptr = (char *)s; // siccome la funzione ritorna un char *
+    ptr = (char *)s; 
     while (*ptr)
     {
         if (*ptr == (char)c)
             return (ptr);
         ptr++;
     }
-    if (c == '\0') // usare anche c == 0 è uguale.
+    if (c == '\0') 
         return (ptr);
     return (NULL);
 }

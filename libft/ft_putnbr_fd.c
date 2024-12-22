@@ -29,12 +29,12 @@ void ft_putnbr_fd(int n, int fd)
     ft_putchar_fd((char)(n % 10 + '0'),fd);
 }
 
-int main(void)
+/* int main(void)
 {
     int num;
 
     num = -2147483648;
     ft_putnbr_fd(num,1);
     return (0);
-}
+} */
 

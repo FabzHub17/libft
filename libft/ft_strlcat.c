@@ -22,7 +22,7 @@ size_t ft_strlcat(char *dest, const char *src, size_t size)
     s_len = ft_strlen(src);
 
     while (*dest)
-        dest++; // gets the pointer to the last character of dest
+        dest++; 
     if (size <= d_len)
         return (size + s_len);
     while (*src && (d_len + 1) < (size - 1))

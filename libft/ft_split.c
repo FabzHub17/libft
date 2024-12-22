@@ -44,6 +44,17 @@ static char *copy_word(const char *start, size_t len)
     return (word);
 }
 
+static void *free_all(char **array, size_t index)
+{
+    size_t i;
+
+    i = 0;
+    while( i < index)
+        free(array[i]);
+    free(array);
+    return (NULL);
+}
+
 static void allocate_word(char **split_arr, char const *str, char sep)
 {
     size_t i;
@@ -63,12 +74,8 @@ static void allocate_word(char **split_arr, char const *str, char sep)
                 str++;
             }
             split_arr[i] = copy_word(start, len);
-            /*if (!split_arr[i])
-            {
-                // free_all(split_array, i);
-                return NULL;
-            }
-            */
+            if (!split_arr[i])
+                free_all(split_arr, i);
             i++;
         }
         else

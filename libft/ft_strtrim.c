@@ -21,12 +21,12 @@ char *ft_strtrim(char const *s, char const *set)
     if (!s || !set)
         return (NULL);
     start = 0;
-    end = ft_strlen(s) - 1; // l'indice dell'ultimo carattere.
+    end = ft_strlen(s) - 1; 
     while (start <= end && ft_strchr(set, s[start]))
         start++;
     while (end >= start && ft_strchr(set, s[end]))
         end--;
-    trimmed = ft_substr(s, start, end - start + 1); //  +1 per includere il terminator.
+    trimmed = ft_substr(s, start, end - start + 1); 
     return (trimmed);
 }
 
