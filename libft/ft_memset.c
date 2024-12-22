@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-void *ft_memset(void *ptr, int c, size_t n)
+void	*ft_memset(void *ptr, int c, size_t n)
 {
-	unsigned char *str;
-	size_t i;
+	unsigned char	*str;
+	size_t			i;
 
 	i = 0;
 	str = (unsigned char *)ptr;
 	while (i < n)
 	{
-		str[i] =(unsigned char)c;
+		str[i] = (unsigned char)c;
 		i++;
 	}
 	return (ptr);
@@ -31,17 +31,17 @@ void *ft_memset(void *ptr, int c, size_t n)
 #include <stdio.h>
 #include <string.h>
 
-int main(void)
+int	main(void)
 {
-	unsigned int i;
+	unsigned int	i;
+	char			buffer[];
 
 	i = 0;
-	char buffer[] = "Hello";
+	buffer[] = "Hello";
 	memset(buffer, 'A', 5);
 	printf("memset value: %s\n", buffer);
 	ft_memset(buffer, 'A', 5);
 	printf("ft_memset value: %s\n", buffer);
-
 	return (0);
 }
 */

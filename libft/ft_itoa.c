@@ -12,26 +12,26 @@
 
 #include "libft.h"
 
-static int ft_numlen(int n)
+static int	ft_numlen(int n)
 {
-    int len;
+	int	len;
 
-    len = 0;
-    if(n < 0)
-    {
-        len++;
-        n = -n; 
-    }
-    while(n != 0)
-    {
-        len++;
-        n /= 10;
-    }
-    return (len);
+	len = 0;
+	if (n < 0)
+	{
+		len++;
+		n = -n;
+	}
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
 }
-static void check_max(int *nbr, char *s)
+static void	check_max(int *nbr, char *s)
 {
-    if (*nbr == -2147483648)
+	if (*nbr == -2147483648)
 	{
 		s[0] = '-';
 		s[1] = '2';
@@ -39,30 +39,30 @@ static void check_max(int *nbr, char *s)
 	}
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    int len;
-    char *str;
+	int		len;
+	char	*str;
 
-    len = ft_numlen(n);
-    str = malloc((len +1) * sizeof(char));
-    if(!str)
-        return (NULL);
-    str[len] = '\0';
-    len--;
-    check_max(&n,str);
-    if(n < 0)
-    {
-        str[0] = '-';
-        n = -n;
-    }
-    while(n > 0)
-    {
-        str[len] = (n % 10) + '0';
-        n /= 10;
-        len--;
-    }
-    return str;
+	len = ft_numlen(n);
+	str = malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	len--;
+	check_max(&n, str);
+	if (n < 0)
+	{
+		str[0] = '-';
+		n = -n;
+	}
+	while (n > 0)
+	{
+		str[len] = (n % 10) + '0';
+		n /= 10;
+		len--;
+	}
+	return (str);
 }
 
 /* int main(void)

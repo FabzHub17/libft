@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-void ft_bzero(void *ptr, size_t n)
+void	ft_bzero(void *ptr, size_t n)
 {
-	unsigned char *s;
+	unsigned char	*s;
 
 	s = (unsigned char *)ptr;
 	while (n != 0)
@@ -27,9 +27,11 @@ void ft_bzero(void *ptr, size_t n)
 ** Test
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char buffer[] = "Hello";
+	char	buffer[];
+
+	buffer[] = "Hello";
 	ft_bzero(buffer, (sizeof(buffer) - 1));
 	printf("%s\n", buffer);
 	return (0);

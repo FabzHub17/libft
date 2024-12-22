@@ -12,34 +12,38 @@
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    const unsigned char *str1;
-    const unsigned char *str2;
-    size_t i;
+	const unsigned char	*str1;
+	const unsigned char	*str2;
+	size_t				i;
 
-    str1 = (const unsigned char *)s1;
-    str2 = (const unsigned char *)s2;
-    i = 0;
-    while (i < n && str1[i] != '\0' && str2[i] != '\0')
-    {
-        if (str1[i] != str2[i])
-            return (str1[i] - str2[i]);
-        i++;
-    }
-    if (n > i)
-        return (str1[i] - str2[i]);
-    return (0);
+	str1 = (const unsigned char *)s1;
+	str2 = (const unsigned char *)s2;
+	i = 0;
+	while (i < n && str1[i] != '\0' && str2[i] != '\0')
+	{
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		i++;
+	}
+	if (n > i)
+		return (str1[i] - str2[i]);
+	return (0);
 }
 
 /*
 TEST
 
 #include <stdio.h>
-int main(void)
+
+int	main(void)
 {
-    char str[] = "Hello World!";
-    char str1[] = "Hello World!";
+	char	str[];
+	char	str1[];
+
+    str[] = "Hello World!";
+    str1[] = "Hello World!";
     printf("result: %d\n", ft_memcmp(str, str1, 5));
     printf("standard result: %d\n", memcmp(str, str1, 5));
     return (0);

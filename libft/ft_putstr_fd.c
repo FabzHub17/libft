@@ -12,26 +12,26 @@
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    size_t i;
+	size_t	i;
 
-    if(!s)
-        return;
-    i = 0;
-    while(s[i] != '\0')
-    {
-        ft_putchar_fd(s[i], fd);
-        i++;
-    }
-
-
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }
 
 /*
-int main(void)
+int	main(void)
 {
-    char *str = "Hello World!";
+	char	*str;
+
+    str = "Hello World!";
     ft_putstr_fd(str,1);
     return(0);
 }
