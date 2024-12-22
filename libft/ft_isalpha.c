@@ -6,13 +6,13 @@
 /*   By: tvithara <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:50:25 by tvithara          #+#    #+#             */
-/*   Updated: 2024/12/10 18:52:35 by tvithara         ###   ########.fr       */
+/*   Updated: 2024/12/22 12:01:05 by tvithara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-	if((c>= 'A' && c<= 'Z') || (c>= 'a' && c<= 'z'))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }
