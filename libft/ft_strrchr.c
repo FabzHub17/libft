@@ -29,9 +29,7 @@ char	*ft_strrchr(const char *s, int c)
 }
 
 /*
-**TEST
-
-int	main(void)
+**TESTft_isalpha(c) || ft_isdigit(c));n(void)
 {
 	const char	*str;
 	char		c;

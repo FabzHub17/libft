@@ -20,14 +20,18 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	if (dest == NULL && src == NULL)
 		return (dest);
-	i = 0;
-	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
+	d = (unsigned char *)dest;
+	i = 0;
 	while (i < n)
 	{
+		// Se la destinazione è prima della sorgente in memoria,
+		// possiamo copiare normalmente dall'inizio verso la fine.
 		if (d < s)
 			d[i] = s[i];
 		else
+			// Se la destinazione si sovrappone alla sorgente, dobbiamo copiare al contrario,
+			// partendo dall'ultimo byte verso il primo, per evitare di sovrascrivere i dati.
 			d[n - i - 1] = s[n - i - 1];
 		i++;
 	}

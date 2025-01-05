@@ -15,16 +15,24 @@
 char	*ft_strdup(const char *s)
 {
 	char	*ptr;
+	size_t	i;
 
+	i = 0;
 	ptr = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!ptr)
 		return (NULL);
-	ft_strlcpy(ptr, s, ft_strlen(s) + 1);
+	while (s[i] != '\0')
+	{
+		ptr[i] = s[i];
+		i++;
+	}
+	ptr[i] = '\0';
 	return (ptr);
 }
 
 /*
-TEST
+ #include <stdio.h>
+
 int	main(void)
 {
 	char	*str;
@@ -36,4 +44,4 @@ int	main(void)
     free(dup);
     return (0);
 }
-*/
+ */
