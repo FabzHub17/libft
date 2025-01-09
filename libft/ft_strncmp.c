@@ -23,24 +23,18 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	if (n > i)
-		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	return (0);
 }
 
-/*
-TEST
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
-	char	str[];
-	char	str1[];
-
-    str[] = "Hello World!";
-    str1[] = "Hello World!";
-    printf("result: %d\n", ft_strncmp(str, str1, 5));
-    printf("standard result: %d\n", strncmp(str, str1, 5));
+	char	str[] = "Hello World!";
+    char 	str1[] = "Hello World!";
+    
+    printf("result: %d\n", ft_strncmp(str, str1, 0));
+    printf("standard result: %d\n", strncmp(str, str1, 0));
     return (0);
-}
-*/
+} */
+

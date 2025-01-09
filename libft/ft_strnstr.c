@@ -14,13 +14,16 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	if (n == 0 && !haystack)
+	size_t	needle_len;
+
+	if (n == 0)
 		return (NULL);
 	if (*needle == '\0')
 		return ((char *)haystack);
-	while (n >= ft_strlen(needle) && *haystack)
+	needle_len = ft_strlen(needle);
+	while (n >= needle_len && *haystack)
 	{
-		if (ft_strncmp(haystack, needle, ft_strlen(needle)) == 0)
+		if (ft_strncmp(haystack, needle, needle_len) == 0)
 			return ((char *)haystack);
 		haystack++;
 		n--;
@@ -28,17 +31,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	return (NULL);
 }
 
-/*
-TEST
-
+/* #include <stdio.h>
 int	main(void)
 {
-	char	str[];
+	char	str[] = "Hello World!";
 	char	*needle;
 	char	*result;
 
-    str[] = "Hello World!";
-    needle = "lo";
+    
+    needle = "World";
     result = ft_strnstr(str, needle, 11);
     if (result)
     {
@@ -48,5 +49,5 @@ int	main(void)
     else
         printf("'%s' not found in '%s'\n", needle, str);
     return (0);
-}
-*/
+} */
+

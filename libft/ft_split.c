@@ -50,7 +50,10 @@ static void	*free_all(char **array, size_t index)
 
 	i = 0;
 	while (i < index)
+	{
 		free(array[i]);
+		i++;
+	}
 	free(array);
 	return (NULL);
 }
