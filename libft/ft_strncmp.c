@@ -37,4 +37,3 @@ int	main(void)
     printf("standard result: %d\n", strncmp(str, str1, 0));
     return (0);
 } */
-

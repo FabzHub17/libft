@@ -50,4 +50,3 @@ int	main(void)
         printf("'%s' not found in '%s'\n", needle, str);
     return (0);
 } */
-
