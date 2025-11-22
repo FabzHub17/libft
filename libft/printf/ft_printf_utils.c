@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_int.c                                     :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvithara <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 18:20:12 by tvithara          #+#    #+#             */
-/*   Updated: 2025/01/22 18:20:14 by tvithara         ###   ########.fr       */
+/*   Created: 2025/01/16 19:47:24 by tvithara          #+#    #+#             */
+/*   Updated: 2025/01/16 19:47:26 by tvithara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/ft_printf.h"
+#include "ft_printf.h"
 
-int	ft_putint(int num)
+int	ft_putchar(char c)
 {
-	int		len;
-	char	*str;
+	ft_putchar_fd(c, 1);
+	return (1);
+}
 
-	str = ft_itoa(num);
-	len = ft_putstr(str);
-	free(str);
+int	ft_putstr(char *str)
+{
+	int	len;
+
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	len = ft_strlen(str);
+	ft_putstr_fd(str, 1);
 	return (len);
 }

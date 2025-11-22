@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_u.c                                       :+:      :+:    :+:   */
+/*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvithara <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 18:31:25 by tvithara          #+#    #+#             */
-/*   Updated: 2025/01/22 18:31:27 by tvithara         ###   ########.fr       */
+/*   Created: 2025/01/22 18:20:12 by tvithara          #+#    #+#             */
+/*   Updated: 2025/01/22 18:20:14 by tvithara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/ft_printf.h"
+#include "ft_printf.h"
 
-int	ft_put_u(unsigned int n)
+int	ft_putint(int num)
 {
-	int	len;
+	int		len;
+	char	*str;
 
-	len = 0;
-	if (n >= 10)
-		len += ft_put_u(n / 10);
-	len += ft_putchar((n % 10) + '0');
+	str = ft_itoa(num);
+	len = ft_putstr(str);
+	free(str);
 	return (len);
 }

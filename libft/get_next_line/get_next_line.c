@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/get_next_line.h"
+#include "get_next_line.h"
 
 char	*get_next_line(int fd)
 {
@@ -46,8 +46,8 @@ char	*read_to_buffer(int fd, char *stash)
 			return (NULL);
 		}
 		buffer[bytes_read] = '\0';
-		stash = ft_strjoin(stash, buffer);
-		if (ft_strchr(stash, '\n'))
+		stash = ft_strjoin_gnl(stash, buffer);
+		if (ft_strchr_gnl(stash, '\n'))
 			break ;
 	}
 	free(buffer);
@@ -64,7 +64,7 @@ char	*extract_line(char *stash)
 	i = 0;
 	while (stash[i] != '\0' && stash[i] != '\n')
 		i++;
-	line = ft_calloc((i + 2), sizeof(char));
+	line = ft_calloc_gnl((i + 2), sizeof(char));
 	if (!line)
 		return (NULL);
 	i = 0;
@@ -93,7 +93,7 @@ char	*update_buffer(char *stash)
 		free(stash);
 		return (NULL);
 	}
-	updated_stash = ft_calloc((ft_strlen(stash) - i + 1), sizeof(char));
+	updated_stash = ft_calloc_gnl((ft_strlen_gnl(stash) - i + 1), sizeof(char));
 	if (!updated_stash)
 	{
 		free(stash);
